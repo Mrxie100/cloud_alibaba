@@ -1,0 +1,15 @@
+server:
+  port: 9003
+
+spring:
+  application:
+    name: cloud-webflux-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: test

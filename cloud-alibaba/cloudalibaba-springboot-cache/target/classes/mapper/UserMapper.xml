@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloudalibaba.cache.mapper.UserMapper">
+    <select id="getUser" resultType="com.cloudalibaba.cache.model.entity.User">
+        select user_coding as id,su_name as name ,su_password as password ,su_contact as phone
+        from sys_users
+        where user_coding = #{id}
+    </select>
+
+    <update id="updateUser" parameterType="com.cloudalibaba.cache.model.entity.User">
+        update sys_users
+        set su_name = #{user.name},
+        set su_password = #{user.password},
+        set su_contact = #{user.phone}
+        where user_coding = #{user.id}
+    </update>
+</mapper>

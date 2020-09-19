@@ -1,0 +1,30 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: nacos-rabbitmq-service
+  rabbitmq:
+    host: 180.76.137.25
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 60s
+    listener:
+      direct:
+        acknowledge-mode: none
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+        port: 8719
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

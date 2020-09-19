@@ -1,0 +1,32 @@
+server:
+  port: 9004
+
+
+spring:
+  application:
+    name: nacos-cache-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://172.18.88.14:3306/demo_xy?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: fangzhizun
+    password: "!LaoDaLaoLai!"
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.cloudalibaba.cache.model.entity
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+logging:
+  level:
+    com.cloudalibaba.cache.mapper: debug
